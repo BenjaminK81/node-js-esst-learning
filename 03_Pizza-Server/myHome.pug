@@ -1,0 +1,20 @@
+
+doctype html
+
+html(lang='de')
+    head
+        meta(charset='UTF-8')
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title My Pizza Fuck | Home 
+    body 
+        h1 Wilkkomen bei Pizza Fuck
+        p Aktuelle Angebote:
+        hr
+        ul(class="pizzaList") 
+            each pizza in pizzen
+                li= "Pizza " + pizza.name + ": " + pizza.price + " EUR"   
+        form(action="/bestellen" method="post" style="display: flex; flex-direction: column; padding: 20px; border: 1px solid; margin-top:20px;") 
+            input(type="text" placeholder="Bestellen..." name="bestellen" style="margin-bottom: 20px; width: 300px" required)
+            input(type="text" placeholder="Adresse" name="adresse" style="margin-bottom: 20px; width: 300px" required)
+            button(type="submit" style="margin-bottom: 20px; width: 300px") Absenden
+            button(type="reset" style="margin-bottom: 20px; width: 300px") Reset

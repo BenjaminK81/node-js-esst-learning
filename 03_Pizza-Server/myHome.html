@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Pizza Fuck | Home</title>
+</head>
+<body>
+
+    <h1>Wilkkomen bei Pizza Fuck </h1> <br>
+
+    <p>Aktuelle Angebote:</p>
+
+    <hr>
+
+    <ul class="pizzaList"></ul>
+
+    <form action="/bestellung" method="post" style="display: flex; flex-direction: column;  border: 1px solid; padding:20px; margin-top:20px;">
+        <input style="width:300px; margin-bottom: 20px;" type="text" placeholder="Bestellung..." name="bestellung" required />
+        <input style="width:300px; margin-bottom: 20px;" type="text" placeholder="Adresse..." name="adresse" required />
+        <button style="width:300px; margin-bottom: 20px;" type="submit">Absenden</button>
+        <button style="width:300px;" type="reset">Reset</button>
+    </form>
+</body>
+</html>
