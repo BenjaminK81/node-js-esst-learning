@@ -39,6 +39,8 @@ export function calcDelAutom() {
     })
 }
 
+//calcDelAutom();
+
 // Faker Inputs mit Faker-JS, oben importiert
 console.log(faker.person.firstName());
 
