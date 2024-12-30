@@ -15,6 +15,7 @@ export function calcDel() {
         console.log(`Deine Lieferkosten beträgt: ${lieferkosten} €`);
     }
 }
+//calcDel();
 
 // Mit Auto-Input
 export function calcDelAutom() {
@@ -38,7 +39,6 @@ export function calcDelAutom() {
         }
     })
 }
-
 //calcDelAutom();
 
 // Faker Inputs mit Faker-JS, oben importiert
