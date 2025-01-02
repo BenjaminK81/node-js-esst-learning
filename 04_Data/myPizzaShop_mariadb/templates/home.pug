@@ -1,0 +1,25 @@
+doctype html 
+
+html(lang='de')
+    head 
+        meta(charset='UTF-8')
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title MyPizza | Startseite
+        style 
+            include ../css/style.css
+    body 
+        main
+            h1 Wilkommen bei MyPizza
+            form(action="/bestellung" method="post")
+
+                select(name="pizzaauswahl") 
+                    option(disabled selected) Bitte wählen
+                    each pizza in allPizzen
+                        option(value=pizza.prod) #{pizza.prod}, #{pizza.price} EUR
+
+                textarea(name="adresse" placeholder="Musterstraße 9, 12345 Hannover") 
+
+                button(type="submit") Bestellen
+
+            section 
+                a(href="/bestellungen") Alle Bestellungen ansehen

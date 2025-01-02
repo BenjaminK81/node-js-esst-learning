@@ -1,0 +1,24 @@
+doctype html 
+
+html(lang='de')
+    head 
+        meta(charset='UTF-8')
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title MyPizza | Bestellübersicht
+        style 
+            include ../css/style.css
+    body 
+        main
+            h1 Bestellübersicht
+            p Alle aktuellen Bestellungen: 
+            ul 
+                each order, index in orders 
+                    li 
+                        span 
+                            h3 Bestellung #{index+1}:
+                        span(class="orderList") Produkkt: #{order.bestellung}
+                        span(class="orderList") Adresse: #{order.adresse}
+                        span(class="orderList") Datum: #{order.datum}
+                        hr 
+            
+            a(href="/") Zurück
