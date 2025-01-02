@@ -16,9 +16,11 @@
     "esmock": "^2.3.1",
     "express": "^4.18.2",
     "mariadb": "^3.1.2",
-    "nodemon": "^3.1.9",
     "pug": "^3.0.2",
     "sequelize": "^6.32.0",
     "ws": "^8.13.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
   }
 }
