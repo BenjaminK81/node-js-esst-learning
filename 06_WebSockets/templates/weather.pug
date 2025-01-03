@@ -1,0 +1,24 @@
+doctype html 
+html(lang='de')
+    head 
+        title Wetter
+        meta(charset='UTF-8')
+    body 
+        h1 Das aktuelle Wetter
+        h2 Wettbergen: 
+            span(id="temp") #{temp}
+        p Messung durchgeführt: 
+            b(id="date") #{date} Uhr
+        
+        script(type='text/javascript'). 
+
+            const ws = new WebSocket('ws://localhost:4242');
+
+            ws.addEventListener('message', allData => {
+
+                const wssWeatherData = JSON.parse(allData.data);
+                const wssWeatherTime = new Date(wssWeatherData.current_weather.time).toLocaleTimeString();
+
+                document.querySelector('#temp').innerHTML = `${wssWeatherData.current_weather.temperature}${wssWeatherData.current_weather_units.temperature}`;
+                document.querySelector('#date').innerHTML = `${wssWeatherTime}`;
+            });
