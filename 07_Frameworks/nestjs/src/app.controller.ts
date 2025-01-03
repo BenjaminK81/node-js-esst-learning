@@ -7,16 +7,16 @@ export class AppController {
 
   @Get('/hello')
   getHello(): string {
-    return this.appService.getHello();
+    return 'Was geht ab?';
   }
 
   @Get('/bestellungen')
   getBestellungen(): string {
-    return 'Bestellungen';
+    return 'Bestellübersicht';
   }
 
   @Get('/bestellung')
   getBestellung(): string {
-    return 'Bestellung kommt hier an';
+    return 'Danke für die Bestellung:';
   }
 }
