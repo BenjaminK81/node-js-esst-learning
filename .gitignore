@@ -2,5 +2,9 @@
 node_modules
 .tmp
 npm-debug.log
+<<<<<<< HEAD
+=======
+.codegpt/head
+>>>>>>> 6152c8782ee38706bca57e4e4d8190a816d0277a
 
 .codegpt
