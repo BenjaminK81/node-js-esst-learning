@@ -1,0 +1,15 @@
+
+doctype html
+
+html(lang='de')
+    head
+        title Neues Produkt
+        meta(charset='UTF-8')
+        style 
+            include ../css/style.css
+    body
+        h1 Neues Produkt
+        main 
+            ul 
+                each prod in prodData
+                    li #{prod.prod} #{prod.price} EUR

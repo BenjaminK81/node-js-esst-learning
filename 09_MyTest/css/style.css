@@ -1,0 +1,33 @@
+:root {
+    background-color: rgb(40,40,40);
+    color: rgb(240,240,240);
+}
+html, body {
+    margin: 0; padding: 0;
+}
+main{
+    max-width: 1024px;
+    width: 100%;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}
+input{
+    height: 40px;
+    margin-bottom: 20px;
+    border: none;
+    max-width: 400px;
+}
+button {
+    max-width: 400px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(210, 105, 30, 1);
+    cursor: pointer;
+}
+button:hover{
+    background-color: rgb(210, 105, 30, 0.7);
+}

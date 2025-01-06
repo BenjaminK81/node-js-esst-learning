@@ -1,0 +1,20 @@
+
+doctype html
+
+html(lang='de')
+    head
+        title My Own Home
+        meta(charset='UTF-8')
+        style 
+            include ../css/style.css
+    body
+        h1 My Own Home
+        main 
+            ul 
+                each prod in prodData
+                    li #{prod.prod} #{prod.price} EUR
+            
+            form(action='/new' method='post')
+                input(type="text" name="product" required)
+                input(type="text" name="price" required)
+                button(type="submit") Neues Produkt anlegen
