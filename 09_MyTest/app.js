@@ -4,7 +4,27 @@ import pug from 'pug';
 import { config } from 'dotenv';
 import fs from 'node:fs';
 import querystring from 'node:querystring';
+import { DataTypes, Sequelize } from 'sequelize';
 config();
+
+const sequelize = new Sequelize('myproducts', 'root', '', {
+    host: 'localhost',
+    dialect: 'mariadb',
+});
+
+try {
+    await sequelize.authenticate();
+    console.log('Connection has been established successfully.');
+} catch (error) {
+    console.error('Unable to connect to the database:', error);
+}
+
+const Produkte = sequelize.define('Produkte', {
+    product: DataTypes.STRING,
+    price: DataTypes.STRING,
+});
+
+await sequelize.sync();
 
 const server = http.createServer((req, resp) => {
 
@@ -61,7 +81,14 @@ const server = http.createServer((req, resp) => {
 
             console.log(newData);
 
+            // Neue Daten in JSON
             fs.writeFileSync("./db/data.json", JSON.stringify(newData));
+
+            // Neue Daten in Datenbank
+            Produkte.create({
+                product: newReq.product,
+                price: newReq.price,
+            });
 
             resp.write(site({
                 prodData: newData.data,
